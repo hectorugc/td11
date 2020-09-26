@@ -83,7 +83,7 @@ randomChar();
 
     vocals.forEach(randomVowel => console.log(Math.random()*vocals.length())); 
 }
-vocalAleatoria();*/
+vocalAleatoria();
 
 function nometprenom(){
     let nom;
@@ -101,9 +101,81 @@ function chainecrypte(){
 }
 
 
+function enterNumber(){
+    let number;
+    number = prompt("Enter a number");
+    for (let i = 1; i <= number; i++) {
+        if (i % 3 === 0 && i % 5 === 0 ) {
+            console.log("Jazz Bundle");
+        }else{
+            if (i % 3 === 0 ) {
+                console.log("Jazz");  
+               }
+               else if(i % 5 === 0){
+               console.log("Bundle");
+               }
+
+        }
+    }
+}
+enterNumber();
+*/
+
+function additioneEntiers(){
+    let tableau1 = [1,2,3,4,10];
+    let sumOfValues = 0;
+    for (let i = 0; i < tableau1.length; i++) {
+        sumOfValues += tableau1[i];
+    }
+    console.log(sumOfValues);
+}
+
+additioneEntiers();
+
+function compteNombreEntiers(){
+    let tableauWithPairs = [2,4,6,5,3,31,57];
+    let countOfPairs = 0;
+    for (let i = 1; i <= tableauWithPairs.length; i++) {
+        if (i % 2 === 0) {
+            countOfPairs++;
+        }
+        
+    }
+    console.log(countOfPairs);
+}
+compteNombreEntiers();
 
 
+    
+    var array1 = [44,5,7];
+    var array2 = [3,55,10];
+    
+    var twoArrays = array1.concat(array2);
+   
+    var calemos = array2.concat(array1);
+    console.log(twoArrays);
+    function sorter(array){
+        var swap, done = false, swapped;
+        do {
+            swapped = 0;
+            for (i = 1; i < array.length;i++) {
+                if (array[i -1] > array[i]) {
+                    swap = array[i];
+                    array[i] = array[i - 1];
+                    array[i - 1] = swap;
+                    swapped = 1;
+                }
+                if (swapped == 0) {
+                    done = true;
+                }
+            } 
+        } while (!done);
+           
+        return array;
+        }
+       
+    
 
-
+console.log(sorter(twoArrays));
 
 
