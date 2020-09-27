@@ -54,13 +54,14 @@ function testEgualite(){
 }
 testEgualite();
 
-/*function saisitChaine(){
+function saisitChaine(){
     let name;
     do {
-         name = prompt();
+         name = prompt("name to upper");
+         console.log(name);
     } while (name != name.toUpperCase() );    
 }
-saisitChaine();*/
+saisitChaine();
 
 function randomChar(){
     do {
@@ -85,7 +86,7 @@ function vocalAleatoria(){
 }
 vocalAleatoria();  
 
-/*
+
 function nometprenom(){
     let nom;
     nom = prompt("Bonjour enter your nom");
@@ -95,7 +96,7 @@ function nometprenom(){
     console.log(nombon + " " +prenombon);
 }
 nometprenom();
-*/
+
 
 
 
@@ -132,7 +133,7 @@ encrypt();
 
 
 
-/*
+
 function enterNumber(){
     let number;
     number = prompt("Enter a number");
@@ -151,7 +152,7 @@ function enterNumber(){
     }
 }
 enterNumber();
-*/
+
 
 
 
