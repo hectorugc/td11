@@ -1,21 +1,8 @@
 function differentsTypes(){
-    let a ;
-    let b = 'blabla'
-    let c = "blabla"
-    let d = `blabla {$x}`
-    let e = 9
-    let f = 2.5
-    let g = true
-    let h = undefined
-    let i = null
-    let j = [1,2,3]
-    let k = new Array()
-    let l = {}
-    let m = {"promo":"lpwmce", "nb":25}
-    let n = new Date()
-    let o = function() {alert('toto')}
-    let p = 42n
+  
     
+    let a, b = 'blabla',  c = "blabla",d = `blabla {$x}`,e = 9,f = 2.5, g = true, h = undefined,i = null,j = [1,2,3], k = new Array(),l = {},m = {"promo":"lpwmce", "nb":25},n = new Date(),o = function() {alert('toto')}, p = 42n;
+
     console.log(typeof a)
     Number.parseInt(console.log(typeof b))
     console.log(typeof c)
@@ -32,17 +19,21 @@ function differentsTypes(){
     console.log(typeof n)
     console.log(typeof o)
     console.log(typeof p)
+    // Uncaught SyntaxError: Identifier 'a' has already been declared
+   // var a, b = 'blabla',  c = "blabla",d = `blabla {$x}`,e = 9,f = 2.5, g = true, h = undefined,i = null,j = [1,2,3], k = new Array(),l = {},m = {"promo":"lpwmce", "nb":25},n = new Date(),o = function() {alert('toto')}, p = 42n;
+
 }
 differentsTypes();
+
+
 function conversionsDuType(){
-    let bb=false;
-    let nn=0;
-    let ss='0';
-    
-    console.log(bb === nn);
-    console.log(bb === nn);
-    console.log(ss == nn);
-    console.log(ss ===nn);
+   let nombre = 23
+    let chaine = "Hola"
+   let string = nombre.toString()
+   console.log(string);
+
+   let number = chaine.parseInt()
+   console.log(number);
 }
 differentsTypes();
 
@@ -55,6 +46,11 @@ function testEgualite(){
     let tab = [];
     let o = {};
     console.log( b == n);
+    console.log(b === n);
+    console.log(s == tab);
+    console.log(s === tab);
+    console.log(tab == o);
+    console.log(tab === o);
 }
 testEgualite();
 
@@ -70,6 +66,7 @@ function randomChar(){
     do {
         var cadena = 0;
         var chaine_genere = String.fromCharCode( 65 + Math.random()*(123-65)) 
+        console.log();
        var chaine_minuscule = chaine_genere.toLowerCase();
        console.log(chaine_genere);
     } while (chaine_genere === chaine_minuscule && cadena < 5);
@@ -78,13 +75,17 @@ randomChar();
 
 
 
-/*function vocalAleatoria(){
+function vocalAleatoria(){
     vocals = ['a','e','i','o','u'];
-
-    vocals.forEach(randomVowel => console.log(Math.random()*vocals.length())); 
+    for (let i = 0; i < vocals.length; i++) {
+       
+        console.log(vocals[Math.floor(Math.random() * vocals.length)]); 
+    }
+    
 }
-vocalAleatoria();
+vocalAleatoria();  
 
+/*
 function nometprenom(){
     let nom;
     nom = prompt("Bonjour enter your nom");
@@ -94,13 +95,44 @@ function nometprenom(){
     console.log(nombon + " " +prenombon);
 }
 nometprenom();
+*/
 
-function chainecrypte(){
-    let chaine_cryptee = "AEGIOSZHOLAMUNDO"
-    
+
+
+
+//A=>4, E=>3, G=>6, I=>1, O=>0, S=>5, Z=>2
+
+
+function encrypt(){
+    var str = "AEGIOSZHOLAMUNDOaegiosz";
+console.log(str);
+var encrypted = {
+   A:"4",
+   E:"3",
+   G:"6",
+   I:"1",
+   O:"0",
+   S:"5",
+   Z:"2",
+   a:"4",
+   e:"3",
+   g:"6",
+   i:"1",
+   o:"0",
+   s:"5",
+   z:"2"
+   
+};
+str = str.replace(/A|4|E|3|G|6|I|1|O|0|S|5|Z|2|a|4|e|3|g|6|i|1|o|0|s|5|z|2/gi, function(matched){
+  return encrypted[matched];
+});
+console.log(str);
 }
+encrypt();
 
 
+
+/*
 function enterNumber(){
     let number;
     number = prompt("Enter a number");
@@ -120,6 +152,10 @@ function enterNumber(){
 }
 enterNumber();
 */
+
+
+
+
 
 function additioneEntiers(){
     let tableau1 = [1,2,3,4,10];
@@ -147,13 +183,8 @@ compteNombreEntiers();
 
 
     
-    var array1 = [44,5,7];
-    var array2 = [3,55,10];
-    
-    var twoArrays = array1.concat(array2);
-   
-    var calemos = array2.concat(array1);
-    console.log(twoArrays);
+    var array1 = [3,5,7,30,55,10];  
+    console.log(array1);
     function sorter(array){
         var swap, done = false, swapped;
         do {
@@ -174,8 +205,20 @@ compteNombreEntiers();
         return array;
         }
        
-    
-
-console.log(sorter(twoArrays));
+console.log(sorter(array1));
 
 
+function rechercheDichotomique(){
+    let tableautries = [1,3,5,7,9];
+}
+
+
+function largestEven(entiers){
+    entiers.sort((x, y) => y - x);
+    for (let i = 0; i < entiers.length; i++) {
+        if (entiers[i] % 2 === 0) {
+        return entiers[i];
+        }   
+    }
+}
+console.log(largestEven([2,567,100,20,10,34]));
